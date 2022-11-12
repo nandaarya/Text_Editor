@@ -16,4 +16,19 @@ object TextEditorData {
         "Vim",
         "Visual Studio Code"
     )
+
+    private val heroesImages = intArrayOf(
+        R.drawable.adobe_dreamweaver,
+        R.drawable.atom,
+        R.drawable.bluefish,
+        R.drawable.brackets,
+        R.drawable.geany,
+        R.drawable.komodo_edit,
+        R.drawable.netbeans,
+        R.drawable.notepad,
+        R.drawable.sublime_text,
+        R.drawable.ultraedit,
+        R.drawable.vim,
+        R.drawable.visualstudiocode
+    )
 }
