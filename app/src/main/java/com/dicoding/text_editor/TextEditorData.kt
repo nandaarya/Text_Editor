@@ -22,6 +22,7 @@ object TextEditorData {
         R.drawable.atom,
         R.drawable.bluefish,
         R.drawable.brackets,
+        R.drawable.emacs,
         R.drawable.geany,
         R.drawable.komodo_edit,
         R.drawable.netbeans,
