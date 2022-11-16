@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Text_Editor</string>
+    <string name="app_name">Text Editor</string>
     <string name="text_editor_name">Nama Text Editor</string>
     <string name="detail">Detail</string>
 </resources>
