@@ -2,10 +2,12 @@ package com.dicoding.text_editor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvTextEditors: RecyclerView
+    private var list: ArrayList<TextEditor> = arrayListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -13,5 +15,14 @@ class MainActivity : AppCompatActivity() {
 
         rvTextEditors = findViewById(R.id.rv_heroes)
         rvTextEditors.setHasFixedSize(true)
+
+        list.addAll(TextEditorData.listData)
+        showRecyclerList()
+    }
+
+    private fun showRecyclerList() {
+        rvTextEditors.layoutManager = LinearLayoutManager(this)
+        val listTextEditorAdapter = ListTextEditorAdapter(list)
+        rvTextEditors.adapter = listTextEditorAdapter
     }
 }
