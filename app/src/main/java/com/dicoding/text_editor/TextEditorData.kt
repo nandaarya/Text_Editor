@@ -48,4 +48,18 @@ object TextEditorData {
         "Vim is a free and open-source, screen-based text editor program. It is an improved clone of Bill Joy's vi. Vim's author, Bram Moolenaar, derived Vim from a port of the Stevie editor for Amiga and released a version to the public in 1991. Vim is designed for use both from a command-line interface and as a standalone application in a graphical user interface.",
         "Visual Studio Code adalah perangkat lunak penyunting kode-sumber buatan Microsoft untuk Linux, macOS, dan Windows. Visual Studio Code menyediakan fitur seperti penyorotan sintaksis, penyelesaian kode, kutipan kode, merefaktor kode, pengawakutuan, dan Git. Microsoft merilis sumber kode Visual Studio Code di repositori GitHub dengan lisensi MIT (Code - OSS), sedangkan biner yang dibangun oleh Microsoft tidak dirilis dengan lisensi MIT dan merupakan perangkat lunak berpemilik."
     )
+
+    val listData: ArrayList<TextEditor>
+        get() {
+            val list = arrayListOf<TextEditor>()
+            for (position in textEditorNames.indices) {
+                val textEditor = TextEditor()
+                textEditor.name = textEditorNames[position]
+                textEditor.detail = textEditorDetails[position]
+                textEditor.photo = textEditorImages[position]
+                list.add(textEditor)
+            }
+            return list
+        }
+
 }
