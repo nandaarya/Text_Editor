@@ -35,6 +35,12 @@ class MainActivity : AppCompatActivity() {
         rvTextEditors.adapter = gridTextEditorAdapter
     }
 
+    private  fun showRecyclerCardView() {
+        rvTextEditors.layoutManager = LinearLayoutManager(this)
+        val cardViewTextEditorAdapter = CardViewTextEditorAdapter(list)
+        rvTextEditors.adapter = cardViewTextEditorAdapter
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
@@ -56,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.action_cardview -> {
-
+                showRecyclerCardView()
             }
         }
     }
