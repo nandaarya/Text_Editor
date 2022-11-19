@@ -1,6 +1,5 @@
 package com.dicoding.text_editor
 
-import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class GridTextEditorAdapter (val listTextEditor: ArrayList<TextEditor>) : RecyclerView.Adapter<GridTextEditorAdapter.GridViewHolder>() {
+class GridTextEditorAdapter (private val listTextEditor: ArrayList<TextEditor>) :
+    RecyclerView.Adapter<GridTextEditorAdapter.GridViewHolder>() {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: TextEditor)
+    }
+
     class GridViewHolder (itemView: View) : RecyclerView.ViewHolder (itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
     }
@@ -24,6 +35,8 @@ class GridTextEditorAdapter (val listTextEditor: ArrayList<TextEditor>) : Recycl
             .load(listTextEditor[position].photo)
             .apply(RequestOptions().override(350, 350))
             .into(holder.imgPhoto)
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listTextEditor[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {

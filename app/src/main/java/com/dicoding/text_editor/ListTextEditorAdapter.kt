@@ -9,7 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class ListTextEditorAdapter (private val listTextEditor: ArrayList<TextEditor>) : RecyclerView.Adapter<ListTextEditorAdapter.ListViewHolder> () {
+class ListTextEditorAdapter (private val listTextEditor: ArrayList<TextEditor>) :
+    RecyclerView.Adapter<ListTextEditorAdapter.ListViewHolder> () {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: TextEditor)
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
@@ -31,6 +43,8 @@ class ListTextEditorAdapter (private val listTextEditor: ArrayList<TextEditor>) 
 
         holder.tvName.text = textEditor.name
         holder.tvDetail.text = textEditor.detail
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listTextEditor[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {

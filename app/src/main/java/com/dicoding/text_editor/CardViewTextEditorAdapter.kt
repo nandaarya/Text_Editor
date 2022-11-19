@@ -11,7 +11,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
-class CardViewTextEditorAdapter (private  val listTextEditor: ArrayList<TextEditor>) : RecyclerView.Adapter<CardViewTextEditorAdapter.CardViewViewHolder>() {
+class CardViewTextEditorAdapter(private val listTextEditor: ArrayList<TextEditor>) :
+    RecyclerView.Adapter<CardViewTextEditorAdapter.CardViewViewHolder>() {
+
+    private lateinit var onItemClickCallback: OnItemClickCallback
+
+    interface OnItemClickCallback {
+        fun onItemClicked(data: TextEditor)
+    }
+
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallback = onItemClickCallback
+    }
+
     class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
@@ -21,7 +33,8 @@ class CardViewTextEditorAdapter (private  val listTextEditor: ArrayList<TextEdit
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardViewViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_cardview_text_editor, parent, false)
+        val view: View = LayoutInflater.from(parent.context)
+            .inflate(R.layout.item_cardview_text_editor, parent, false)
         return CardViewViewHolder(view)
     }
 
@@ -36,9 +49,31 @@ class CardViewTextEditorAdapter (private  val listTextEditor: ArrayList<TextEdit
         holder.tvName.text = textEditor.name
         holder.tvDetail.text = textEditor.detail
 
-        holder.btnFavorite.setOnClickListener {Toast.makeText(holder.itemView.context, "Favorite " + listTextEditor[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
-        holder.btnShare.setOnClickListener {Toast.makeText(holder.itemView.context, "Share " + listTextEditor[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
-        holder.itemView.setOnClickListener {Toast.makeText(holder.itemView.context, "Kamu memilih " + listTextEditor[holder.adapterPosition].name, Toast.LENGTH_SHORT).show()}
+        holder.btnFavorite.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Favorite " + listTextEditor[holder.adapterPosition].name,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        holder.btnShare.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Share " + listTextEditor[holder.adapterPosition].name,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        holder.itemView.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Kamu memilih " + listTextEditor[holder.adapterPosition].name,
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listTextEditor[holder.adapterPosition]) }
     }
 
     override fun getItemCount(): Int {
