@@ -16,8 +16,8 @@ class DetailActivity : AppCompatActivity() {
 //        supportActionBar?.title = intent.getStringExtra("text_editor_name")
 
         var imgPhoto: ImageView = findViewById(R.id.img_item_photo)
-        var tvName: TextView = findViewById(R.id.tv_item_name)
-        var tvDetail: TextView = findViewById(R.id.tv_item_detail)
+        val tvName: TextView = findViewById(R.id.tv_item_name)
+        val tvDetail: TextView = findViewById(R.id.tv_item_detail)
 
         tvName.text = intent.getStringExtra("text_editor_name")
         tvDetail.text = intent.getStringExtra("text_editor_detail")
