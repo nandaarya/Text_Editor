@@ -29,7 +29,7 @@ class ListTextEditorAdapter (private val listTextEditor: ArrayList<TextEditor>) 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_text_editor, parent, false)
+        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_list_text_editor, parent, false)
         return  ListViewHolder(view)
     }
 
