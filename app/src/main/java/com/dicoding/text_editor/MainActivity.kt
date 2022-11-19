@@ -1,11 +1,11 @@
 package com.dicoding.text_editor
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -68,7 +68,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun showSelectedTextEditor(textEditor: TextEditor) {
         Toast.makeText(this, "Kamu memilih " + textEditor.name, Toast.LENGTH_SHORT).show()
+
         val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra("text_editor_name", textEditor.name)
+        intent.putExtra("text_editor_img", textEditor.photo)
+        intent.putExtra("text_editor_detail", textEditor.detail)
         startActivity(intent)
     }
 
