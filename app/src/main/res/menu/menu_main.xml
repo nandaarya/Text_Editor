@@ -13,4 +13,8 @@
         android:id="@+id/action_cardview"
         android:title="@string/with_cardview"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/about_page"
+        android:title="@string/about"
+        app:showAsAction="never"/>
 </menu>
