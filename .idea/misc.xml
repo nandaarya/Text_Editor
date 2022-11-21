@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/drawable-v24/ic_baseline_share_24.xml" value="0.1465" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/activity_about.xml" value="0.253125" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/activity_detail.xml" value="0.1" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -10,6 +11,7 @@
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/item_grid_text_editor.xml" value="0.14719202898550723" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/item_row_hero.xml" value="0.253125" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/item_row_text_editor.xml" value="0.2" />
+        <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/menu/menu_detail.xml" value="0.253125" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/menu/menu_main.xml" value="0.25677083333333334" />
       </map>
     </option>
