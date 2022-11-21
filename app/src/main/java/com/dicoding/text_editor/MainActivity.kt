@@ -106,6 +106,11 @@ class MainActivity : AppCompatActivity() {
                 title = "Mode CardView"
                 showRecyclerCardView()
             }
+
+            R.id.about_page -> {
+                val intent = Intent(this, AboutActivity::class.java)
+                startActivity(intent)
+            }
         }
         setActionBarTitle(title)
     }
