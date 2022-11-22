@@ -28,7 +28,6 @@ class CardViewTextEditorAdapter(private val listTextEditor: ArrayList<TextEditor
         var imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
         var tvName: TextView = itemView.findViewById(R.id.tv_item_name)
         var tvDetail: TextView = itemView.findViewById(R.id.tv_item_detail)
-        var btnFavorite: Button = itemView.findViewById(R.id.btn_set_favorite)
         var btnShare: Button = itemView.findViewById(R.id.btn_set_share)
     }
 
@@ -48,14 +47,6 @@ class CardViewTextEditorAdapter(private val listTextEditor: ArrayList<TextEditor
 
         holder.tvName.text = textEditor.name
         holder.tvDetail.text = textEditor.detail
-
-        holder.btnFavorite.setOnClickListener {
-            Toast.makeText(
-                holder.itemView.context,
-                "Favorite " + listTextEditor[holder.adapterPosition].name,
-                Toast.LENGTH_SHORT
-            ).show()
-        }
 
         holder.btnShare.setOnClickListener {
             Toast.makeText(
