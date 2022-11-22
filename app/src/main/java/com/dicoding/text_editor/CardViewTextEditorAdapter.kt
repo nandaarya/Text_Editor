@@ -1,5 +1,6 @@
 package com.dicoding.text_editor
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -49,11 +50,13 @@ class CardViewTextEditorAdapter(private val listTextEditor: ArrayList<TextEditor
         holder.tvDetail.text = textEditor.detail
 
         holder.btnShare.setOnClickListener {
-            Toast.makeText(
-                holder.itemView.context,
-                "Share " + listTextEditor[holder.adapterPosition].name,
-                Toast.LENGTH_SHORT
-            ).show()
+            val sendIntent: Intent = Intent().apply {
+                action = Intent.ACTION_SEND
+                putExtra(Intent.EXTRA_TEXT, "${textEditor.name}. ${textEditor.detail}")
+                type = "text/plain"
+            }
+            val shareIntent = Intent.createChooser(sendIntent, null)
+            holder.btnShare.context.startActivity(shareIntent)
         }
 
         holder.itemView.setOnClickListener {
