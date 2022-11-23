@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/drawable-v24/ic_baseline_share_24.xml" value="0.1465" />
+        <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/drawable/ic_splash_logo.xml" value="0.1965" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/drawable/splash.xml" value="0.1" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/activity_about.xml" value="0.253125" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/activity_detail.xml" value="0.1" />
@@ -15,6 +18,7 @@
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/layout/item_row_text_editor.xml" value="0.2" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/menu/menu_detail.xml" value="0.253125" />
         <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/menu/menu_main.xml" value="0.25677083333333334" />
+        <entry key="..\:/Project/Android/Text_Editor/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.136" />
       </map>
     </option>
   </component>
