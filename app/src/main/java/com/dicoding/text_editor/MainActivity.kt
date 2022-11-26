@@ -6,9 +6,11 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvTextEditors: RecyclerView
@@ -79,6 +81,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
+        setTheme()
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -89,6 +92,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun setActionBarTitle(title: String) {
         supportActionBar?.title = title
+    }
+
+    private fun setTheme (){
+        val switchBtn: SwitchMaterial  = findViewById(R.id.switch_theme)
+        val isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        switchBtn.isChecked = isNightModeOn
+        switchBtn.setOnCheckedChangeListener{ _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
     }
 
     private fun setMode(selectedMode: Int) {
