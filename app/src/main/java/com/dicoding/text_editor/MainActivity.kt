@@ -81,7 +81,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
-        setTheme()
         return super.onCreateOptionsMenu(menu)
     }
 
@@ -96,7 +95,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setTheme (){
         val switchBtn: SwitchMaterial  = findViewById(R.id.switch_theme)
-        val isNightModeOn = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+        val isNightModeOn: Boolean = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
         switchBtn.isChecked = isNightModeOn
         switchBtn.setOnCheckedChangeListener{ _, isChecked ->
             if (isChecked) {
@@ -127,6 +126,9 @@ class MainActivity : AppCompatActivity() {
             R.id.about_page -> {
                 val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.switch_theme -> {
+                setTheme()
             }
         }
         setActionBarTitle(title)
