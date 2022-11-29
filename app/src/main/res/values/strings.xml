@@ -11,4 +11,5 @@
     <string name="about">About</string>
     <string name="text_editor_image">Text Editor Image</string>
     <string name="theme_switch_button">Theme Switch Button</string>
+    <string name="floating_action_button">Submit</string>
 </resources>

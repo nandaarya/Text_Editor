@@ -95,13 +95,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun setTheme (){
         val switchBtn: SwitchMaterial  = findViewById(R.id.switch_theme)
-        val isNightModeOn: Boolean = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
-        switchBtn.isChecked = isNightModeOn
+//        val isNightModeOn: Boolean = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
+//        switchBtn.isChecked = isNightModeOn
         switchBtn.setOnCheckedChangeListener{ _, isChecked ->
             if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
             }
         }
     }
