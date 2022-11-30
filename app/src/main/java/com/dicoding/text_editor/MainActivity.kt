@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.switchmaterial.SwitchMaterial
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvTextEditors: RecyclerView
@@ -29,14 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         list.addAll(TextEditorData.listData)
         showRecyclerList()
-        val fab: View = findViewById(R.id.fab)
-        fab.setOnClickListener {
-            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-        }
+        fabChangeTheme()
     }
 
     private fun showRecyclerList() {
@@ -88,6 +80,17 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+    private fun fabChangeTheme() {
+        val fab: View = findViewById(R.id.fab)
+        fab.setOnClickListener {
+            if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+        }
+    }
+
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_main, menu)
         return super.onCreateOptionsMenu(menu)
@@ -100,19 +103,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun setActionBarTitle(title: String) {
         supportActionBar?.title = title
-    }
-
-    private fun setTheme (){
-        val switchBtn: SwitchMaterial  = findViewById(R.id.switch_theme)
-//        val isNightModeOn: Boolean = AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES
-//        switchBtn.isChecked = isNightModeOn
-        switchBtn.setOnCheckedChangeListener{ _, isChecked ->
-            if (isChecked) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            } else {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-            }
-        }
     }
 
     private fun setMode(selectedMode: Int) {
@@ -135,9 +125,6 @@ class MainActivity : AppCompatActivity() {
             R.id.about_page -> {
                 val intent = Intent(this, AboutActivity::class.java)
                 startActivity(intent)
-            }
-            R.id.switch_theme -> {
-                setTheme()
             }
         }
         setActionBarTitle(title)
