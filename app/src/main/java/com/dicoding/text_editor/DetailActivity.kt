@@ -17,8 +17,6 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-//        supportActionBar?.title = intent.getStringExtra("text_editor_name")
-
         val imgPhoto: ImageView = findViewById(R.id.img_item_photo)
         val tvName: TextView = findViewById(R.id.tv_item_name)
         val tvDetail: TextView = findViewById(R.id.tv_item_detail)
