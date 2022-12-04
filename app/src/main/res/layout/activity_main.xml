@@ -18,7 +18,7 @@
         android:layout_gravity="end|bottom"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        android:foreground="@drawable/fab_states"
+        android:src="@drawable/fab_states"
         android:contentDescription="@string/floating_action_button"
         android:layout_margin="16dp" />
 </RelativeLayout>
