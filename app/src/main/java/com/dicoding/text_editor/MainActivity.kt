@@ -85,10 +85,8 @@ class MainActivity : AppCompatActivity() {
         fab.setOnClickListener {
             if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_NO){
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
-                !fab.isActivated
             } else {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-                !fab.isActivated
             }
         }
     }

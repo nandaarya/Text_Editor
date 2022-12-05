@@ -21,4 +21,15 @@
         android:src="@drawable/fab_states"
         android:contentDescription="@string/floating_action_button"
         android:layout_margin="16dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:src="@drawable/fab_states_debugging"
+        android:contentDescription="@string/floating_action_button"
+        android:layout_margin="16dp" />
 </RelativeLayout>
