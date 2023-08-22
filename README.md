@@ -1,3 +1,3 @@
 # Text_Editor
 
-Text editor project
+An App that shows list of Text Editor
